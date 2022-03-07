@@ -30,6 +30,88 @@ body {
     margin-left: 20px;
 }
 
+/* form-fixed */
+
+#form-fixed form {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 50px;
+    transition: .3s linear;
+}
+
+#form-fixed form select {
+    width: 18%;
+    box-sizing: border-box;
+    border: 2px solid #fffcfc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    padding: 7px 16px 9px;
+    font-family: noto sans,sans-serif;
+    margin-right: 10px;
+    color: #aaa;
+}
+
+#form-fixed form .inputWithIcon{
+    box-sizing: border-box;
+    border: 2px solid #fffcfc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 9px 22px 11px 38px;
+
+}
+
+#form-fixed #fixed .inputWithIcon img {
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 25px;
+    border-right: 1px solid #999999;
+    top: 10px;
+    left: 5px;
+    padding-right: 5px;
+    color: #aaa;
+}
+
+#form-fixed #fixed .inputWithIcon input{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #fffcfc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    font-family: noto sans,sans-serif;
+    margin-right: 10px;
+    color: #aaa;
+    outline: none;
+}
+
+#form-fixed form input[type=submit] {
+    background-color: #FFB43B;
+    border: none;
+    border-radius: 5px 5px ;
+    font-size: 16px;
+    padding: 10px 20px 10px;
+    color: #fff;
+    margin-left: -10px;
+}
+
+#form-fixed form button {
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(0,0,0,.3);
+    color: #fff;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* logo */
+
 .container {
     max-width: 1100px;
     margin-top: 50px;
@@ -44,9 +126,21 @@ body {
 
 .container-nav {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 100px 0px 100px;
-    height: 40px;
+    justify-content: space-around;
+    height: 50px;
+    margin-top: 0;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.navbar {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0));
+    position: fixed;
+    z-index: 999;
+    transition: .3s linear;
+    height: 90px;
+    padding: 20px 10px;
+    width: 100%;
 }
 
 .menu {
@@ -55,16 +149,16 @@ body {
 }
 
 .nav-logo {
-    width: 30%;
+    width: 20%;
 }
 
 .nav-logo img {
-    height: 35px;
+    height: 50px;
+    width: 100%;
 }
 
 .nav-menu {
     display: flex;
-    width: 100%;
     flex-direction: row-reverse;
     height: 40px;
     align-items: center;
@@ -83,16 +177,6 @@ margin-left: 30px;
     color: #FFF;
 }
 
-.navbar {
-    background-color: transparent;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0));
-    position: fixed;
-    z-index: 999;
-    transition: .3s linear;
-    height: 90px;
-    padding: 20px 0;
-    width: 100%;
-}
 .hero {
     display: flex;
     flex-direction: column;
@@ -361,6 +445,7 @@ margin-left: 30px;
     justify-content: space-evenly;
     border-radius: 0 20px 20px 0;
     padding: 30px 50px;
+    background-color: #FFF;
 }
 
 .title-catch h4 {
@@ -582,6 +667,10 @@ margin-left: 30px;
 }
 
 @media (max-width: 1020px) {
+    #form-fixed {
+        display: none !important;
+    }
+
     .nav-logo svg {
         width: 230px; 
         height: 37px;
@@ -617,13 +706,22 @@ margin-left: 30px;
 
 @media (max-width: 920px) {
     .div-menu-telefone {
-        display: none;
+        display: none !important;
+    }
+
+    .navbar {
+        background-color: transparent !important;
     }
 
     .nav-menu-botao {
         background-color: #4E8AC1;
         border-radius: 40px;
         padding: 10px;
+    }
+
+    .catch {
+        border-radius: 0 0 20px 20px;
+        margin-bottom: 40px;
     }
 
 }
@@ -687,10 +785,10 @@ margin-left: 30px;
     }
 
     .banner {
-        height: 80vh;
+        height: 75vh;
     }
     .hero {
-        height: 75vh;
+        height: 60vh;
         justify-content: flex-end;
     }
     
@@ -743,6 +841,7 @@ margin-left: 30px;
         padding: 0;
         margin: 20px;
         align-items: center;
+        background: transparent;
     }
 
     .title-catch  h4 {
@@ -795,13 +894,9 @@ margin-left: 30px;
 }
 
 @media (max-width: 420px) {
-    /* .whatsapp {
-        background-color: transparent;
+    .hero-section h1 {
+        font-size: 18px;
     }
-
-    .whatsapp a .text {
-        display: none;
-    } */
 
     .container-nav {
         margin: 0;
@@ -828,6 +923,10 @@ margin-left: 30px;
     }
     .title-doubts, .cover {
         display: none;
+    }
+
+    .card-advertise {
+        width: 80%;
     }
 
     .catch {
