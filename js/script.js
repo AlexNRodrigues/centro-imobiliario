@@ -1,4 +1,4 @@
-var btn = document.querySelector(".busca-ref");
+var btn = document.querySelector("button.busca-ref");
 btn.addEventListener("click", function () {
     var div = document.querySelector("#referencia");
     var filtro1 = document.querySelector("#filtro1");
