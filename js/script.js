@@ -39,12 +39,12 @@ function rolar() {
         telefone.style.display = "none";
         formFixed.style.display = "block";
         navbar.style.backgroundColor = "#6EADE7";
-        heroSection.style.display = "none"
+//         heroSection.style.display = "none";
     } else {
         telefone.style.display = "block";
         formFixed.style.display = "none";
         navbar.style.backgroundColor = "transparent";
-        heroSection.style.display = "flex";
+//         heroSection.style.display = "flex";
     }
 
       ultimaPosicao = atualPosicao;
